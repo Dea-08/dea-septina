@@ -85,7 +85,35 @@ body {
 
 .hamburger {
   display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #2980b9;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+
 
 /* ===================================================================
    Hero Section
