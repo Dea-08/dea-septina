@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Layanan - Rumah Sakit Sehat</title>
+  <title>Layanan - Rumah sakit Vitruvia Medical center</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,12 +17,19 @@
     <div class="logo">
         <h1><i class="fas fa-heartbeat"></i> Vitruvia</h1>
     </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="layanan.html" class="active">Layanan</a></li>
-      <li><a href="dokter.html">Dokter</a></li>
-      <li><a href="kontak.html">Kontak</a></li>
-      <li><a href="daftar.html">Daftar</a></li>
+    <ul class="nav-links">
+        <li><a href="beranda.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="layanan.html"><i class="fas fa-stethoscope"></i> Layanan</a>
+            <ul class="dropdown">
+                <li><a href="IGD.html">Instalasi Gawat Darurat</a></li>
+                <li><a href="rawat jalan.html">Rawat Jalan</a></li>
+                <li><a href="rawat inap.html">Rawat Inap</a></li>
+                <li><a href="penunjang medis.html">Penunjang Medis</a></li>
+            </ul>
+        </li>
+        <li><a href="Dokter.html"><i class="fas fa-user-md"></i> Dokter</a></li>
+        <li><a href="kontak.html"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+        <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
     </ul>
     <div class="hamburger" id="hamburger">&#9776;</div>
   </nav>
@@ -43,21 +50,26 @@
         <i class="fas fa-ambulance"></i>
         <h3>IGD 24 Jam</h3>
         <p>Pelayanan gawat darurat siap melayani Anda kapan saja.</p>
+        <a href="IGD.html">Instalasi Gawat Darurat</a>
       </div>
       <div class="card">
         <i class="fas fa-stethoscope"></i>
         <h3>Rawat Jalan</h3>
         <p>Konsultasi medis dengan dokter spesialis dan umum.</p>
+        <a href="rawat jalan.html">Rawat Jalan</a>
       </div>
       <div class="card">
         <i class="fas fa-procedures"></i>
         <h3>Rawat Inap</h3>
         <p>Fasilitas perawatan yang nyaman dan aman untuk pemulihan pasien.</p>
+        <a href="rawat inap.html">Rawat Inap</a>
+
       </div>
       <div class="card">
         <i class="fas fa-vials"></i>
         <h3>Laboratorium dan Radiologi</h3>
         <p>Analisis medis lengkap dan akurat untuk diagnosis tepat.</p>
+        <a href="penunjang medis.html">Penunjang Medis</a>
       </div>
     </div>
   </section>
