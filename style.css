@@ -1,0 +1,843 @@
+/* ===================================================================
+   General Styles
+   =================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ===================================================================
+   Navbar
+   =================================================================== */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background-color: #0b3954;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navigation .logo h1 {
+  font-size: 24px;
+  color: #eaf4f4;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-links a {
+  color: #eaf4f4;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #81D4FA;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 230px;
+}
+
+.nav-links .dropdown li a {
+  padding: 10px 20px;
+  color: #444;
+  font-weight: 400;
+}
+
+.nav-links li:hover > .dropdown {
+  display: block;
+}
+
+.nav-links .dropdown li:hover {
+  background-color: #f2f2f2;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* ===================================================================
+   Hero Section
+   =================================================================== */
+.hero {
+  background: url('image/Hospital.png') no-repeat center center/cover;
+  position: relative;
+  color: white;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 5%;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(11, 57, 84, 0.5);
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero h2 {
+  color: #eeee;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero p {
+  color: #eeeeee;
+}
+
+/* CTA button (used in multiple sections) */
+.cta-button {
+  display: inline-block;
+  background-color: #4b57fd;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background-color: #4b57fd;
+}
+
+/* ===================================================================
+   Utility Container
+   =================================================================== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 5%;
+}
+
+/* ===================================================================
+   About Section
+   =================================================================== */
+.about-section {
+  background-color: #fff;
+  text-align: center;
+}
+.about-section h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* ===================================================================
+   Features Section
+   =================================================================== */
+.features {
+  background-color: #eaf4f4;
+  text-align: center;
+}
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.card {
+  background-color: #fff;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 15px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card i {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0b3954;
+}
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* ===================================================================
+   Testimonials Section
+   =================================================================== */
+.testimonials {
+  background-color: #fff;
+  text-align: center;
+}
+.testimonial {
+  background-color: #f0f8ff;
+  margin: 15px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-left: 5px solid #0b3954;
+  border-radius: 10px;
+}
+
+/* ===================================================================
+   CTA Register Section
+   =================================================================== */
+.cta-register {
+  background-color: white;
+  color: #0b3954;
+  text-align: center;
+  padding: 50px 5%;
+}
+.cta-register h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.cta-register p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* ===================================================================
+   Footer
+   =================================================================== */
+.footer {
+  background-color: #0b3954;
+  color: #ccc;
+  padding: 40px 5% 20px;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer-section {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+.footer-section a:hover {
+  color: #4b57fd;
+}
+.footer .socials a {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #ccc;
+  transition: color 0.3s;
+}
+.footer .socials a:hover {
+  color: white;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 0.9rem;
+}
+
+/* ===================================================================
+   Responsive Rules
+   =================================================================== */
+@media (max-width: 768px) {
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-content {
+    flex-direction: column;
+  }
+  .nav-links {
+    display: none; /* Show via JS hamburger */
+  }
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+/* ===================================================================
+   Form Section
+   =================================================================== */
+.form-section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b3954;
+}
+.registration-form label {
+  display: block;
+  margin-top: 15px;
+  color: #333;
+}
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.registration-form button {
+  background-color: #0b3954;
+  color: white;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.registration-form button:hover {
+  background-color: #0b3954;
+}
+
+/* ===================================================================
+   Register Options (Cards)
+   =================================================================== */
+.register-options {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.register-card {
+  flex: 1 1 250px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.register-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+.register-card i {
+  color: #0b3954;
+  margin-bottom: 1rem;
+}
+.register-card h3 {
+  color: #0b3954;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+
+/* ========================= */
+/* TENTANG KAMI & VISI MISI */
+/* ========================= */
+
+.about-vision {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    gap: 30px;
+}
+
+.about-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-img {
+    width: 40%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-box {
+    flex: 1;
+}
+
+.text-box h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.text-box h4 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.text-box p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-card.reverse {
+        flex-direction: column;
+    }
+
+    .about-img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .container-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Bagian Kontak */
+.kontak {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.kontak .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.kontak-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.kontak-info {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  font-size: 16px;
+  color: #444;
+}
+
+.kontak-info p {
+  margin-bottom: 15px;
+}
+
+.kontak-info i {
+  color: #0b3954;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #444;
+  margin-right: 15px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0b3954;
+}
+
+.kontak-form {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+.kontak-form .btn-kirim {
+  padding: 12px;
+  background-color: #0b3954;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.kontak-form .btn-kirim:hover {
+  background-color: #0b3954;
+}
+
+
+/*Bagian IGD*/
+
+.igd {
+  padding: 60px 20px;
+  background-color: #fff5f7;
+}
+
+.igd .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #0b3954;
+}
+
+.igd-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.igd-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  color: #444;
+}
+
+.igd-text p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.igd-text ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.igd-text li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.igd-text i {
+  color: #0b3954;
+  margin-right: 10px;
+}
+
+.igd-text .btn-cta {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #0b3954;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.igd-text .btn-cta:hover {
+  background-color: #0b3954;
+}
+
+.igd-img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 450px;
+}
+
+.igd-img img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Bagian Rawat Jalan*/
+.rawat-jalan-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.rawat-jalan-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.rawat-jalan-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #0b3954;
+}
+
+.rawat-jalan-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rawat-jalan-info li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.rawat-jalan-info i {
+  margin-right: 10px;
+  color: #0b3954;
+}
+
+.rawat-jalan-image {
+  flex: 1;
+  min-width: 250px;
+}
+
+.rawat-jalan-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.rawat-jalan-cta {
+  margin-top: 40px;
+  text-align: center;
+  background-color: #fff0f5;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.rawat-jalan-cta p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.btn-kontak {
+  background-color: #0b3954;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-kontak:hover {
+  background-color: #0b3954;
+}
+
+/* Bagian Penunjang Medis*/
+.penunjang-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.penunjang-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.penunjang-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #0b3954;
+}
+
+.penunjang-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.penunjang-info li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.penunjang-info i {
+  margin-right: 10px;
+  color: #0b3954;
+}
+
+.penunjang-image {
+  flex: 1;
+  min-width: 250px;
+}
+
+.penunjang-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.penunjang-cta {
+  margin-top: 40px;
+  text-align: center;
+  background-color: #fff0f5;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.penunjang-cta p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+
+/* Bagian Rawat Inap*/
+.rawat-inap-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.rawat-inap-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.rawat-inap-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #0b3954;
+}
+
+.rawat-inap-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rawat-inap-info li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.rawat-inap-info i {
+  margin-right: 10px;
+  color: #0b3954;
+}
+
+.rawat-inap-image {
+  flex: 1;
+  min-width: 250px;
+}
+
+.rawat-inap-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.rawat-inap-cta {
+  margin-top: 40px;
+  text-align: center;
+  background-color: #fef3f7;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.rawat-inap-cta p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

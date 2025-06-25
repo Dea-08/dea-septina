@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Pendaftaran - Vitruvia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navigation">
+    <div class="logo">
+        <h1><i class="fas fa-heartbeat"></i> Vitruvia</h1>
+    </div>
+    <ul class="nav-links">
+        <li><a href="beranda.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="layanan.html"><i class="fas fa-stethoscope"></i> Layanan</a>
+            <ul class="dropdown">
+                <li><a href="IGD.html">Instalasi Gawat Darurat</a></li>
+                <li><a href="rawat jalan.html">Rawat Jalan</a></li>
+                <li><a href="rawat inap.html">Rawat Inap</a></li>
+                <li><a href="penunjang medis..html">Penunjang Medis</a></li>
+            </ul>
+        </li>
+        <li><a href="Dokter.html"><i class="fas fa-user-md"></i> Dokter</a></li>
+        <li><a href="kontak.html"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+        <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang Kami</a></li>
+    </ul>
+    <div class="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>
+
+
+<section class="form-section">
+    <h2>Formulir Pendaftaran Pasien</h2>
+    <form action="proses_daftar.php" method="POST" class="registration-form">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telepon">Nomor Telepon:</label>
+        <input type="tel" id="telepon" name="telepon" required>
+
+        <label for="gender">Jenis Kelamin:</label>
+        <select id="gender" name="gender" required>
+            <option value="">-- Pilih --</option>
+            <option value="Pria">Pria</option>
+            <option value="Wanita">Wanita</option>
+        </select>
+
+        <label for="tanggal">Tanggal Lahir:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <label for="poli">Poli Tujuan:</label>
+        <select id="poli" name="poli" required>
+        <option value="">-- Pilih Poli --</option>
+        <option value="Umum">Umum</option>
+        <option value="Gigi">Gigi</option>
+        <option value="Anak">Anak</option>
+        <option value="Kandungan">Kandungan</option>
+        <option value="Jantung">Jantung</option>
+        <option value="THT">THT</option>
+        </select>
+        
+        <label for="Tanggal Kunjungan">Tanggal kunjungan:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+
+        <label for="keluhan">Keluhan:</label>
+        <textarea id="keluhan" name="keluhan" rows="4" required></textarea>
+
+        <button type="submit">Kirim Pendaftaran</button>
+    </form>
+</section>
+
+</body>
+</html>

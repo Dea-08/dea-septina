@@ -1,0 +1,187 @@
+<!-- Navbar -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Dokter - Vitruvia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #0b3954;
+      color: white;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .Dokter {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .Dokter h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    .poli-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .poli-card {
+      width: 180px;
+      padding: 15px;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .poli-card:hover {
+      background-color: #81D4FA;
+      color: white;
+    }
+    .poli-card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    .jadwal-box {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .jadwal-box h3 {
+      margin-bottom: 15px;
+      color: #0b3954;;
+    }
+    .jadwal-box ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .jadwal-box li {
+      margin-bottom: 15px;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 6px;
+      border-left: 4px solid #81D4FA;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navigation">
+    <div class="logo">
+      <h1><i class="fas fa-heartbeat"></i> Vitruvia</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="beranda.html"><i class="fas fa-home"></i> Beranda</a></li>
+      <li><a href="layanan.html"><i class="fas fa-stethoscope"></i> Layanan</a></li>
+      <li><a href="Dokter.html" class="active"><i class="fas fa-user-md"></i> Dokter</a></li>
+      <li><a href="kontak.html"><i class="fas fa-phone-alt"></i> Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section class="Dokter">
+    <h2>Jadwal Dokter</h2>
+    <div class="poli-grid">
+      <div class="poli-card" onclick="tampilkanJadwal('Penyakit Dalam')">
+        <img src="image/penyakit dalam.jpg" alt="icon" />
+        <p>Penyakit Dalam</p>
+      </div>
+      <div class="poli-card" onclick="tampilkanJadwal('Kebidanan dan Kandungan')">
+        <img src="image/kandungan.jpg" alt="icon" />
+        <p>Kebidanan dan Kandungan</p>
+      </div>
+      <div class="poli-card" onclick="tampilkanJadwal('Jantung dan Pembuluh Darah')">
+        <img src="image/jantung.jpg" alt="icon" />
+        <p>Jantung dan Pembuluh Darah</p>
+      </div>
+       <div class="poli-card" onclick="tampilkanJadwal('Anak')">
+        <img src="image/Anak.jpg" alt="icon" />
+        <p>Anak</p>
+      </div>
+      <div class="poli-card" onclick="tampilkanJadwal('Umum')">
+        <img src="image/Poli Rehab Medic.png-17Nov2020075108" alt="icon" />
+        <p>Umum</p>
+      </div>
+    </div>
+
+    <div class="jadwal-box" id="jadwalBox">
+      <!-- Jadwal dokter akan tampil di sini -->
+    </div>
+  </section>
+
+  <script>
+  const dataJadwal = {
+
+  "Penyakit Dalam": [
+    { nama: "dr. Angga Yunanda, SpPD", hari: "Senin & Rabu", jam: "08:00 - 12:00" },
+    { nama: "dr. Min Yonggi, SpPD", hari: "Jumat", jam: "09:00 - 13:00" },
+    { nama: "dr. Tiara Fahriza, SpPD", hari: "Senin - Minggu", jam: "12:00 - 18:00" }
+  ],
+  "Kebidanan dan Kandungan": [
+    { nama: "dr. Dewi Astuti, SpOG", hari: "Selasa & Kamis", jam: "10:00 - 14:00" },
+    { nama: "dr. Jeon Jungkook, SpOG", hari: "Sabtu", jam: "08:00 - 12:00" },
+    { nama: "dr. Kim Taehyung, SpOG", hari: "Senin - Jumat", jam: "12:00 - 17:00" }
+  ],
+  "Jantung dan Pembuluh Darah": [
+    { nama: "dr. Jennie Ruby, SpJP", hari: "Senin & Kamis", jam: "08:00 - 11:00" },
+    { nama: "dr. Yislam Jaidi, SpJP", hari: "Selasa - Jumat", jam: "12:00 - 19:00" },
+    { nama: "dr. Baskara Mahendra, SpJP", hari: "Selasa - Jumat", jam: "12:00 - 19:00" }
+  ],
+  "Anak": [
+    { nama: "dr. Sri Wahyuni, SpA", hari: "Senin - Kamis", jam: "08:00 - 12:00" },
+    { nama: "dr. Leny Ambarwati, SpA", hari: "Selasa & Jumat", jam: "09:00 - 13:00" },
+    { nama: "dr. Miza Afrizal, SpA", hari: "Rabu - Sabtu", jam: "10:00 - 19:00" }
+  ],
+  "Umum": [
+    { nama: "dr. Dahlia Polandia", hari: "Senin - Kamis", jam: "07:00 - 12:00" },
+    { nama: "dr. Annisa Nur Cahyanti", hari: "Selasa & Jumat", jam: "12:00 - 17:00" },
+    { nama: "dr. Dinda Evelin", hari: "Rabu - Sabtu", jam: "17:00 - 23:00" },
+    { nama: "dr. Dea Septina", hari: "Minggu - Selasa", jam:" 12:00 - 17:00"}
+  ]
+};
+
+
+
+    function tampilkanJadwal(spesialis) {
+      const box = document.getElementById("jadwalBox");
+      const jadwal = dataJadwal[spesialis];
+
+      if (!jadwal) {
+        box.innerHTML = `<p>Belum ada jadwal untuk spesialis <strong>${spesialis}</strong></p>`;
+        return;
+      }
+
+      let html = `<h3>Jadwal Dokter - ${spesialis}</h3><ul>`;
+      jadwal.forEach(dokter => {
+        html += `<li><strong>${dokter.nama}</strong><br>Hari: ${dokter.hari}<br>Jam: ${dokter.jam}</li>`;
+      });
+      html += `</ul>`;
+      box.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
