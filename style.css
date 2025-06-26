@@ -120,10 +120,7 @@ body {
   justify-content: center;
 }
 
-.container{
-  color:#0b3954
-  position : center;
-}
+
 .gallery-item {
   flex: 1 1 calc(33.33% - 20px); /* 3 kolom */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);

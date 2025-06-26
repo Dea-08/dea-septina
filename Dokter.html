@@ -20,6 +20,11 @@
       background-color: #0b3954;
       color: white;
     }
+
+    .jadwal-box li img {
+  vertical-align: middle;
+}
+
     .nav-links {
       display: flex;
       list-style: none;
@@ -137,51 +142,60 @@
   const dataJadwal = {
 
   "Penyakit Dalam": [
-    { nama: "dr. Angga Yunanda, SpPD", hari: "Senin & Rabu", jam: "08:00 - 12:00" },
-    { nama: "dr. Min Yonggi, SpPD", hari: "Jumat", jam: "09:00 - 13:00" },
-    { nama: "dr. Tiara Fahriza, SpPD", hari: "Senin - Minggu", jam: "12:00 - 18:00" }
+    { nama: "dr. Angga Yunanda, SpPD", hari: "Senin & Rabu", jam: "08:00 - 12:00", foto:"image/angga yunanda.jpg"},
+    { nama: "dr. Min Yonggi, SpPD", hari: "Jumat", jam: "09:00 - 13:00", foto:"image/suga.jpg" },
+    { nama: "dr. Tiara Fahriza, SpPD", hari: "Senin - Minggu", jam: "12:00 - 18:00", foto:"image/mpo alpa.jpg" }
   ],
   "Kebidanan dan Kandungan": [
-    { nama: "dr. Dewi Astuti, SpOG", hari: "Selasa & Kamis", jam: "10:00 - 14:00" },
-    { nama: "dr. Jeon Jungkook, SpOG", hari: "Sabtu", jam: "08:00 - 12:00" },
-    { nama: "dr. Kim Taehyung, SpOG", hari: "Senin - Jumat", jam: "12:00 - 17:00" }
+    { nama: "dr. Dewi Astuti, SpOG", hari: "Selasa & Kamis", jam: "10:00 - 14:00", foto:"image/dewi.jpg"},
+    { nama: "dr. Jeon Jungkook, SpOG", hari: "Sabtu", jam: "08:00 - 12:00", foto:"image/JK.jpg" },
+    { nama: "dr. Kim Taehyung, SpOG", hari: "Senin - Jumat", jam: "12:00 - 17:00",foto:"image/taehyung.jpg" }
   ],
   "Jantung dan Pembuluh Darah": [
-    { nama: "dr. Jennie Ruby, SpJP", hari: "Senin & Kamis", jam: "08:00 - 11:00" },
-    { nama: "dr. Yislam Jaidi, SpJP", hari: "Selasa - Jumat", jam: "12:00 - 19:00" },
-    { nama: "dr. Baskara Mahendra, SpJP", hari: "Selasa - Jumat", jam: "12:00 - 19:00" }
+    { nama: "dr. Jennie Ruby, SpJP", hari: "Senin & Kamis", jam: "08:00 - 11:00", foto:"image/jennie.jpg"},
+    { nama: "dr. Yislam Jaidi, SpJP", hari: "Selasa - Jumat", jam: "12:00 - 19:00", foto:"image/yislam.jpg"},
+    { nama: "dr. Baskara Mahendra, SpJP", hari: "Selasa - Jumat", jam: "12:00 - 19:00",foto:"image/baskara.jpg"}
   ],
   "Anak": [
-    { nama: "dr. Sri Wahyuni, SpA", hari: "Senin - Kamis", jam: "08:00 - 12:00" },
-    { nama: "dr. Leny Ambarwati, SpA", hari: "Selasa & Jumat", jam: "09:00 - 13:00" },
-    { nama: "dr. Miza Afrizal, SpA", hari: "Rabu - Sabtu", jam: "10:00 - 19:00" }
+    { nama: "dr. Lisa Manoban, SpA", hari: "Senin - Kamis", jam: "08:00 - 12:00", foto:"image/Lisa.jpg" },
+    { nama: "dr. Roseanne park, SpA", hari: "Selasa & Jumat", jam: "09:00 - 13:00", foto:"image/rose.jpg" },
+    { nama: "dr. Kim jiso, SpA", hari: "Rabu - Sabtu", jam: "10:00 - 19:00", foto:"image/jiso.jpg" }
   ],
   "Umum": [
-    { nama: "dr. Dahlia Polandia", hari: "Senin - Kamis", jam: "07:00 - 12:00" },
-    { nama: "dr. Annisa Nur Cahyanti", hari: "Selasa & Jumat", jam: "12:00 - 17:00" },
-    { nama: "dr. Dinda Evelin", hari: "Rabu - Sabtu", jam: "17:00 - 23:00" },
-    { nama: "dr. Dea Septina", hari: "Minggu - Selasa", jam:" 12:00 - 17:00"}
+    { nama: "dr. Jerome Polin", hari: "Senin - Kamis", jam: "07:00 - 12:00", foto:"image/jerome.jpg" },
+    { nama: "dr. Ryunjin", hari: "Selasa & Jumat", jam: "12:00 - 17:00", foto:"image/ryunjin.jpg" },
+    { nama: "dr. Kim Soekjin", hari: "Rabu - Sabtu", jam: "17:00 - 23:00", foto:"image/soekjin.jpg" },
+    { nama: "dr. Hyun Bin", hari: "Minggu - Selasa", jam:" 12:00 - 17:00", foto:"image/hyunbin.jpg"}
   ]
 };
 
 
+function tampilkanJadwal(spesialis) {
+  const box = document.getElementById("jadwalBox");
+  const jadwal = dataJadwal[spesialis];
 
-    function tampilkanJadwal(spesialis) {
-      const box = document.getElementById("jadwalBox");
-      const jadwal = dataJadwal[spesialis];
+  if (!jadwal) {
+    box.innerHTML = `<p>Belum ada jadwal untuk spesialis <strong>${spesialis}</strong></p>`;
+    return;
+  }
 
-      if (!jadwal) {
-        box.innerHTML = `<p>Belum ada jadwal untuk spesialis <strong>${spesialis}</strong></p>`;
-        return;
-      }
+  let html = `<h3>Jadwal Dokter - ${spesialis}</h3><ul>`;
+  jadwal.forEach(dokter => {
+    html += `
+      <li>
+        <img src="${dokter.foto}" alt="${dokter.nama}" style="width:60px; height:60px; border-radius:50%; float:left; margin-right:10px;">
+        <div style="overflow:hidden;">
+          <strong>${dokter.nama}</strong><br>
+          Hari: ${dokter.hari}<br>
+          Jam: ${dokter.jam}
+        </div>
+      </li>
+    `;
+  });
+  html += `</ul>`;
+  box.innerHTML = html;
+}
 
-      let html = `<h3>Jadwal Dokter - ${spesialis}</h3><ul>`;
-      jadwal.forEach(dokter => {
-        html += `<li><strong>${dokter.nama}</strong><br>Hari: ${dokter.hari}<br>Jam: ${dokter.jam}</li>`;
-      });
-      html += `</ul>`;
-      box.innerHTML = html;
-    }
   </script>
 </body>
 </html>
