@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const nomor_wa = "6285887195694";
 
+      if (!nama || !email || !telepon || !gender || !tanggal_lahir || !poli || !tanggal_kunjungan || !keluhan) {
+      alert("Mohon lengkapi semua data sebelum mengirim.");
+      return;
+    }
+
         const pesan = `Halo, saya ingin daftar sebagai pasien:\n
 Nama: ${nama}
 Email: ${email}
