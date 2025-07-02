@@ -15,25 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("active");
   });
 
- 
-document.getElementById("wa-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Mencegah form dikirim seperti biasa
+    function kirimWhatsApp() {
+        const nama = document.getElementById("nama").value;
+        const email = document.getElementById("email").value;
+        const telepon = document.getElementById("telepon").value;
+        const gender = document.getElementById("gender").value;
+        const tanggal_lahir = document.getElementById("tanggal_lahir").value;
+        const poli = document.getElementById("poli").value;
+        const tanggal_kunjungan = document.getElementById("tanggal_kunjungan").value;
+        const keluhan = document.getElementById("keluhan").value;
 
-    // Ambil data dari input
-    const nama = document.getElementById("nama").value;
-    const email = document.getElementById("email").value;
-    const telepon = document.getElementById("telepon").value;
-    const gender = document.getElementById("gender").value;
-    const tanggal_lahir = document.getElementById("tanggal").value;
-    const poli = document.getElementById("poli").value;
-    const tanggal_kunjungan = document.getElementById("tanggal_kunjungan").value;
-    const keluhan = document.getElementById("keluhan").value;
+        const nomor_wa = "6285887195694";
 
-    // Nomor WhatsApp tujuan (ganti dengan nomor rumah sakit atau admin)
-    const nomor_wa = "6285887195694"; // tanpa "+" dan ganti 0 jadi 62
-
-    // Buat isi pesan
-    const pesan = `Halo, saya ingin daftar sebagai pasien:\n
+        const pesan = `Halo, saya ingin daftar sebagai pasien:\n
 Nama: ${nama}
 Email: ${email}
 Telepon: ${telepon}
@@ -43,10 +37,9 @@ Poli Tujuan: ${poli}
 Tanggal Kunjungan: ${tanggal_kunjungan}
 Keluhan: ${keluhan}`;
 
-    // Buat URL WhatsApp
-    const waUrl = `https://wa.me/${nomor_wa}?text=${encodeURIComponent(pesan)}`;
+        const waUrl = `https://wa.me/${nomor_wa}?text=${encodeURIComponent(pesan)}`;
+        window.open(waUrl, '_blank');
+    }
 
-    // Arahkan ke WhatsApp
-    window.open(waUrl, '_blank');
-});
+
 
