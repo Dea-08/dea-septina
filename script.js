@@ -16,22 +16,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
  
-function kirimWhatsApp() {
-    var nama = document.getElementById("nama").value;
-    var email = document.getElementById("email").value;
-    var telepon = document.getElementById("telepon").value;
-    var gender = document.getElementById("gender").value;
-    var tanggalLahir = document.getElementById("tanggal").value;
-    var poli = document.getElementById("poli").value;
-    var tanggalKunjungan = document.getElementById("tanggal_kunjungan").value;
-    var keluhan = document.getElementById("keluhan").value;
+document.getElementById("wa-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Mencegah form dikirim seperti biasa
 
-    var pesan = `Halo Admin, saya ingin daftar:\n\nNama: ${nama}\nEmail: ${email}\nTelepon: ${telepon}\nJenis Kelamin: ${gender}\nTanggal Lahir: ${tanggalLahir}\nPoli: ${poli}\nTanggal Kunjungan: ${tanggalKunjungan}\nKeluhan: ${keluhan}`;
+    // Ambil data dari input
+    const nama = document.getElementById("nama").value;
+    const email = document.getElementById("email").value;
+    const telepon = document.getElementById("telepon").value;
+    const gender = document.getElementById("gender").value;
+    const tanggal_lahir = document.getElementById("tanggal").value;
+    const poli = document.getElementById("poli").value;
+    const tanggal_kunjungan = document.getElementById("tanggal_kunjungan").value;
+    const keluhan = document.getElementById("keluhan").value;
 
-    // Nomor WhatsApp tujuan (ganti dengan nomor admin)
-    var nomorTujuan = "6285887195694"; // format: 62 + nomor tanpa 0
+    // Nomor WhatsApp tujuan (ganti dengan nomor rumah sakit atau admin)
+    const nomor_wa = "6281234567890"; // tanpa "+" dan ganti 0 jadi 62
 
-    var url = `https://wa.me/${nomorTujuan}?text=${encodeURIComponent(pesan)}`;
+    // Buat isi pesan
+    const pesan = `Halo, saya ingin daftar sebagai pasien:\n
+Nama: ${nama}
+Email: ${email}
+Telepon: ${telepon}
+Jenis Kelamin: ${gender}
+Tanggal Lahir: ${tanggal_lahir}
+Poli Tujuan: ${poli}
+Tanggal Kunjungan: ${tanggal_kunjungan}
+Keluhan: ${keluhan}`;
 
-    window.open(url, '_blank');
-}
+    // Buat URL WhatsApp
+    const waUrl = `https://wa.me/${nomor_wa}?text=${encodeURIComponent(pesan)}`;
+
+    // Arahkan ke WhatsApp
+    window.open(waUrl, '_blank');
+});
+
