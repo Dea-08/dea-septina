@@ -30,7 +30,7 @@ document.getElementById("wa-form").addEventListener("submit", function(event) {
     const keluhan = document.getElementById("keluhan").value;
 
     // Nomor WhatsApp tujuan (ganti dengan nomor rumah sakit atau admin)
-    const nomor_wa = "6281234567890"; // tanpa "+" dan ganti 0 jadi 62
+    const nomor_wa = "6285887195694"; // tanpa "+" dan ganti 0 jadi 62
 
     // Buat isi pesan
     const pesan = `Halo, saya ingin daftar sebagai pasien:\n
