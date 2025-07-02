@@ -1,3 +1,24 @@
+function kirimPesanWhatsApp() {
+  const nama = document.getElementById("namaKontak").value;
+  const email = document.getElementById("emailKontak").value;
+  const pesan = document.getElementById("pesanKontak").value;
+
+  if (!nama || !email || !pesan) {
+    alert("Mohon lengkapi semua data.");
+    return;
+  }
+
+  const nomor_wa = "6285887195694"; 
+
+  const text = `Halo, saya ${nama}.\nEmail: ${email}\nPesan: ${pesan}`;
+  const url = `https://wa.me/${nomor_wa}?text=${encodeURIComponent(text)}`;
+
+  window.open(url, "_blank");
+}
+
+
+
+
 function kirimWhatsApp() {
         const nama = document.getElementById("nama").value;
         const email = document.getElementById("email").value;

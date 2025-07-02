@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitruvia Medical Center</title>
     <link rel="stylesheet" href="style.css">
+    
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -58,11 +60,11 @@
         </div>
       </div>
       <!-- Form Kontak -->
-      <form class="kontak-form">
-        <input type="text" placeholder="Nama Anda" required>
-        <input type="email" placeholder="Email Anda" required>
-        <textarea placeholder="Pesan Anda" rows="5" required></textarea>
-        <button type="submit" class="btn-kirim">Kirim Pesan</button>
+      <form class="kontak-form" onsubmit="kirimPesanWhatsApp(); return false;">
+      <input type="text" id="namaKontak" placeholder="Nama Anda" required>
+      <input type="email" id="emailKontak" placeholder="Email Anda" required>
+      <textarea id="pesanKontak" placeholder="Pesan Anda" rows="5" required></textarea>
+      <button type="submit" class="btn-kirim">Kirim Pesan</button>
       </form>
     </div>
   </div>
